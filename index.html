@@ -37,16 +37,15 @@ input,select,textarea{font-family:inherit;font-size:1rem}
 .home-top h1{font-family:var(--font-d);font-weight:800;font-size:clamp(2rem,5vw,3.4rem);line-height:1.05;margin-top:10px}
 .home-top h1 em{font-style:italic;font-weight:400}
 .home-top p{margin-top:12px;opacity:.7;max-width:520px;margin-inline:auto;font-size:.95rem}
-.gates{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;min-height:62vh}
+.gates{flex:1;display:grid;grid-template-columns:repeat(3,1fr);gap:0;min-height:64vh}
 .gate{position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;color:#fff;text-align:left;transition:flex .3s ease;border-top:6px solid var(--acc2)}
 .gate .sky{position:absolute;inset:0;z-index:0}
-.gate .sky svg{position:absolute;bottom:0;left:0;width:100%;height:auto;opacity:.9}
-.gate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),rgba(0,0,0,.05) 60%);z-index:1}
+.gate .sky svg{position:absolute;inset:0;width:100%;height:100%;opacity:1}
+.gate::after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.42),rgba(0,0,0,.08) 34%,transparent 60%);z-index:1}
 .gate>div.meta{position:relative;z-index:2}
-.gate .flag{display:inline-flex;height:14px;width:22px;border-radius:3px;overflow:hidden;box-shadow:0 1px 4px rgba(0,0,0,.4);margin-bottom:10px}
-.gate .flag i{flex:1}
-.gate h2{font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800}
-.gate .sub{opacity:.9;font-size:.9rem;margin-top:4px}
+.gate .flagsvg{height:20px;width:auto;border-radius:3px;box-shadow:0 1px 5px rgba(0,0,0,.45);margin-bottom:12px;display:block}
+.gate h2{font-family:var(--font-d);font-size:clamp(1.6rem,3vw,2.4rem);font-weight:800;text-shadow:0 2px 12px rgba(0,0,0,.55)}
+.gate .sub{opacity:.95;font-size:.9rem;margin-top:4px;text-shadow:0 1px 8px rgba(0,0,0,.7);max-width:300px}
 .gate .count{margin-top:14px;display:inline-block;background:rgba(255,255,255,.16);backdrop-filter:blur(4px);padding:6px 12px;border-radius:999px;font-size:.8rem;font-weight:700}
 .gate:hover{filter:brightness(1.06)}
 .gate:focus-visible{outline:3px solid #fff;outline-offset:-6px}
@@ -183,69 +182,147 @@ input,select,textarea{font-family:inherit;font-size:1rem}
   </div>
   <div class="gates">
     <button class="gate gate-es theme-es" onclick="openLang('es')" aria-label="İspanyolca çalış">
-      <div class="sky"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-        <g fill="rgba(0,0,0,.30)">
-          <!-- Sagrada Familia -->
-          <path d="M40 150V70l6-14 6 14v80zM60 150V55l7-18 7 18v95zM82 150V70l6-14 6 14v80z"/>
-          <circle cx="67" cy="34" r="3"/><circle cx="46" cy="53" r="2.5"/><circle cx="88" cy="53" r="2.5"/>
-          <!-- bull -->
-          <path d="M290 150v-28c0-10 8-20 22-20h30c10 0 16 6 22 6 7 0 10-5 16-5 4 0 6 3 4 6-3 5-9 7-9 12v29h-12v-20h-30v20h-12v-16c-8 2-19 1-19 8v8z"/>
-          <path d="M362 100c6-6 14-8 20-6-4 6-12 9-20 6zM330 100c-6-6-14-8-20-6 4 6 12 9 20 6z"/>
-          <!-- guitar -->
-          <path d="M180 150c-12 0-22-10-22-21 0-8 5-13 5-19s-4-8-4-14c0-9 9-16 21-16s21 7 21 16c0 6-4 8-4 14s5 11 5 19c0 11-10 21-22 21z" opacity=".7"/>
-          <rect x="177" y="52" width="6" height="34" opacity=".7"/>
-          <circle cx="180" cy="118" r="8" fill="rgba(255,255,255,.25)"/>
-        </g>
-      </svg></div>
+      <div class="sky"><svg viewBox="0 0 400 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><!-- ===== SAGRADA FAMILIA — tall hero, centered ===== -->
+<g transform="translate(2.5 57.5) scale(2.5)">
+  <g stroke="#2a0308" stroke-width="1" fill="#2a0308" fill-opacity=".36" stroke-opacity=".55" stroke-linejoin="round">
+    <path d="M28 180 L28 96 Q30 78 33 66 Q35 58 37 66 Q40 78 42 96 L42 180 Z"/>
+    <path d="M48 180 L48 72 Q50 44 54 30 Q56 22 58 30 Q62 44 64 72 L64 180 Z"/>
+    <path d="M70 180 L70 58 Q72 26 77 10 Q79 2 81 10 Q86 26 88 58 L88 180 Z"/>
+    <path d="M94 180 L94 72 Q96 44 100 30 Q102 22 104 30 Q108 44 110 72 L110 180 Z"/>
+    <path d="M116 180 L116 96 Q118 78 121 66 Q123 58 125 66 Q128 78 130 96 L130 180 Z"/>
+  </g>
+  <g stroke="#f4c94b" stroke-width=".6" stroke-opacity=".5" fill="none">
+    <path d="M35 60 v-6 M79 4 v-7 M102 24 v-6 M58 24 v-6 M122 60 v-6"/>
+    <path d="M77 46 h4 M75 66 h8 M73 88 h12 M71 112 h16 M69 138 h20"/>
+    <path d="M56 44 h4 M54 66 h8 M52 92 h12 M50 120 h16"/>
+    <path d="M100 44 h4 M98 66 h8 M96 92 h12 M94 120 h16"/>
+    <path d="M35 74 h4 M33 100 h8 M31 130 h12"/>
+    <path d="M121 74 h4 M119 100 h8 M117 130 h12"/>
+  </g>
+  <g fill="#f4c94b" fill-opacity=".5" stroke="none">
+    <circle cx="35" cy="54" r="1.4"/><circle cx="79" cy="-3" r="1.6"/><circle cx="102" cy="18" r="1.4"/><circle cx="58" cy="18" r="1.4"/><circle cx="122" cy="54" r="1.4"/>
+  </g>
+</g>
+<!-- ===== OSBORNE BULL — bottom-left foreground ===== -->
+<g transform="translate(-4 366) scale(1.15)">
+  <g fill="#2a0308" fill-opacity=".5">
+    <path d="M16 74 Q22 62 34 56 Q42 52 47 48 Q62 41 88 40 Q122 43 152 52 Q167 56 169 66 L167 128 L155 128 L155 92 Q120 96 92 92 Q80 94 66 92 L66 128 L54 128 L54 86 Q48 82 42 78 Q30 78 22 78 Q16 78 16 74 Z"/>
+    <path d="M46 48 Q30 40 25 25 Q35 40 51 47 Z"/>
+    <path d="M53 47 Q67 37 76 24 Q71 41 57 49 Z"/>
+    <path d="M168 66 Q177 68 175 84 Q174 98 167 104 Q172 93 166 82 Q164 73 168 66 Z"/>
+  </g>
+  <circle cx="40" cy="60" r="1.8" fill="#f4c94b" fill-opacity=".55"/>
+</g>
+<!-- ===== FLAMENCO GUITAR — bottom-right foreground ===== -->
+<g transform="translate(300 300) rotate(-22) scale(1.7)">
+  <g stroke="#2a0308" stroke-width="1.4" fill="#2a0308" fill-opacity=".32" stroke-opacity=".6">
+    <path d="M0 0 C-16 0 -26 12 -26 30 C-26 50 -12 66 6 66 C24 66 38 50 38 30 C38 14 30 4 18 2 C14 -4 8 -6 2 -4 C1 -3 0 -1 0 0 Z"/>
+    <rect x="0" y="-56" width="8" height="56" rx="2"/>
+    <path d="M-1 -56 h10 q4 0 4 5 v10 q0 5 -4 5 h-10 q-4 0 -4 -5 v-10 q0 -5 4 -5 Z"/>
+  </g>
+  <circle cx="8" cy="28" r="8" fill="#2a0308" fill-opacity=".5"/>
+  <circle cx="8" cy="28" r="10.5" fill="none" stroke="#f4c94b" stroke-width=".9" stroke-opacity=".5"/>
+  <g stroke="#f4c94b" stroke-width=".5" stroke-opacity=".55"><path d="M4 -50 L4 44 M6 -50 L7 44 M8 -50 L10 44"/></g>
+  <rect x="0" y="44" width="14" height="4" rx="1" fill="#2a0308" fill-opacity=".5"/>
+  <g fill="#f4c94b" fill-opacity=".5"><circle cx="-2" cy="-50" r="1.4"/><circle cx="10" cy="-50" r="1.4"/><circle cx="-2" cy="-42" r="1.4"/><circle cx="10" cy="-42" r="1.4"/></g>
+</g></svg></div>
       <div class="meta">
-        <span class="flag"><i style="background:#C8102E"></i><i style="background:#F1BF00"></i><i style="background:#C8102E"></i></span>
+        <svg class="flagsvg" viewBox="0 0 34 24" aria-hidden="true"><rect width="34" height="24" rx="2" fill="#f4c94b"/><rect width="34" height="6" fill="#c8102e"/><rect y="18" width="34" height="6" fill="#c8102e"/><g transform="translate(12 12)"><rect x="-8" y="-4" width="2" height="9" fill="#c8102e"/><rect x="6" y="-4" width="2" height="9" fill="#c8102e"/><path d="M-5 -5 h10 v6 q0 4 -5 6 q-5 -2 -5 -6 Z" fill="#fff" stroke="#7a0c1f" stroke-width=".5"/><path d="M-5 -5 h5 v5 h-5 Z" fill="#c8102e"/><path d="M0 0 h5 v-5 h-5 Z" fill="#c8102e" opacity=".85"/><rect x="-5" y="0" width="5" height="3" fill="#f4c94b"/><path d="M0 0 h5 v3 h-5 Z" fill="#fff"/><path d="M-4 -6 h8 l-1 -3 -1.5 2 -1.5 -3 -1.5 3 -1.5 -2 Z" fill="#f1bf00" stroke="#7a0c1f" stroke-width=".3"/></g></svg>
         <h2>İspanyolca</h2>
         <div class="sub">Sagrada Familia'dan boğa arenalarına — paella tadında kelimeler</div>
         <span class="count" id="count-es">— kelime</span>
       </div>
     </button>
     <button class="gate gate-fr theme-fr" onclick="openLang('fr')" aria-label="Fransızca çalış">
-      <div class="sky"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-        <g fill="rgba(0,0,0,.30)">
-          <!-- Eiffel -->
-          <path d="M195 150l24-52h6l-16-38h4l-11-30h-4l-11 30h4l-16 38h6l24 52zM186 98h42M178 118h60" stroke="rgba(0,0,0,.30)" stroke-width="5" fill="rgba(0,0,0,.30)"/>
-          <path d="M199 150c6-12 16-12 22 0z" fill="rgba(0,0,0,0)" stroke="rgba(0,0,0,.30)" stroke-width="5"/>
-          <!-- croissant -->
-          <path d="M60 132c-14-4-24-16-22-28 14 2 22 8 26 16 2-10 8-16 18-18 10 2 16 8 18 18 4-8 12-14 26-16 2 12-8 24-22 28-12 4-32 4-44 0z"/>
-          <!-- baguette -->
-          <path d="M300 142c26-22 56-34 80-36 4 8 0 14-8 18-22 8-48 16-64 26-6 2-10-4-8-8z"/>
-          <path d="M322 128l8 8M340 120l8 8M358 112l8 8" stroke="rgba(255,255,255,.3)" stroke-width="3"/>
-        </g>
-      </svg></div>
+      <div class="sky"><svg viewBox="0 0 400 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><!-- ===== EIFFEL TOWER — tall hero ===== -->
+<g transform="translate(38 19) scale(2.7)">
+ <g transform="translate(29 0)">
+  <path d="M4 180 Q16 150 12 132 Q14 112 18 96 Q19 82 22 70 Q25 48 29 30 L31 6 L33 30 Q37 48 40 70 Q43 82 44 96 Q48 112 50 132 Q46 150 58 180 Z" fill="#050f38" fill-opacity=".5"/>
+  <path d="M17 180 Q20 146 31 140 Q42 146 45 180 Z" fill="#0a2570"/>
+  <g stroke="#7fa0e8" stroke-width="1.1" stroke-opacity=".55"><path d="M11 132 h40"/><path d="M17 96 h28"/><path d="M21 70 h20"/></g>
+  <path d="M15 180 Q19 144 31 138 Q43 144 47 180" fill="none" stroke="#7fa0e8" stroke-width=".9" stroke-opacity=".55"/>
+  <g stroke="#7fa0e8" stroke-width=".5" stroke-opacity=".42" fill="none">
+    <path d="M14 178 L31 140 M48 178 L31 140"/>
+    <path d="M13 130 L44 100 M49 130 L18 100"/>
+    <path d="M18 94 L40 72 M44 94 L22 72"/>
+    <path d="M22 68 L31 32 M40 68 L31 32 M26 56 h10 M27 46 h8 M29 36 h4"/>
+  </g>
+  <circle cx="31" cy="4" r="1.4" fill="#7fa0e8" fill-opacity=".7"/>
+ </g>
+</g>
+<!-- ===== ARC DE TRIOMPHE — bottom-left ===== -->
+<g transform="translate(6 388) scale(1.15)">
+  <g fill="#050f38" fill-opacity=".5" stroke="#050f38" stroke-opacity=".5" stroke-width="1">
+    <path d="M0 88 L0 22 Q0 16 6 16 L84 16 Q90 16 90 22 L90 88 Z"/>
+    <rect x="-4" y="8" width="98" height="10" rx="2"/>
+  </g>
+  <path d="M33 88 L33 52 Q33 40 45 40 Q57 40 57 52 L57 88 Z" fill="#0a2570"/>
+  <g stroke="#e5ecff" stroke-width="1" stroke-opacity=".4" fill="none">
+    <rect x="8" y="46" width="16" height="30" rx="1"/><rect x="66" y="46" width="16" height="30" rx="1"/>
+    <path d="M4 30 h82"/>
+  </g>
+</g>
+<!-- ===== WINE BOTTLE + GLASS — bottom-right ===== -->
+<g transform="translate(300 300) scale(1.5)">
+  <path d="M4 106 L4 46 Q4 36 10 30 L10 6 Q10 2 14 2 Q18 2 18 6 L18 30 Q24 36 24 46 L24 106 Z" fill="#050f38" fill-opacity=".5" stroke="#050f38" stroke-opacity=".5"/>
+  <rect x="4" y="60" width="20" height="20" fill="#e5ecff" fill-opacity=".25" stroke="#e5ecff" stroke-opacity=".4" stroke-width=".8"/>
+  <path d="M8 70 h12" stroke="#e5ecff" stroke-width=".8" stroke-opacity=".4"/>
+  <g transform="translate(34 34)" fill="none" stroke="#e5ecff" stroke-width="1.1" stroke-opacity=".5">
+    <path d="M2 2 Q2 24 16 26 Q30 24 30 2 Z" fill="#7fa0e8" fill-opacity=".2"/>
+    <path d="M16 26 L16 56 M6 58 h20"/>
+  </g>
+</g></svg></div>
       <div class="meta">
-        <span class="flag"><i style="background:#002395"></i><i style="background:#fff"></i><i style="background:#ED2939"></i></span>
+        <svg class="flagsvg" viewBox="0 0 34 24" aria-hidden="true"><rect width="34" height="24" rx="2" fill="#fff"/><rect width="11.5" height="24" rx="2" fill="#002395"/><rect x="11.3" width="11" height="24" fill="#fff"/><rect x="22.5" width="11.5" height="24" fill="#ed2939"/><rect x="21" width="2" height="24" fill="#ed2939"/><rect width="34" height="24" rx="2" fill="none" stroke="#00000022" stroke-width=".5"/></svg>
         <h2>Fransızca</h2>
-        <div class="sub">Eyfel'in gölgesinde kruvasan kokulu kelimeler</div>
+        <div class="sub">Eyfel'den Zafer Takı'na — zarafet dolu kelimeler</div>
         <span class="count" id="count-fr">— kelime</span>
       </div>
     </button>
     <button class="gate gate-it theme-it" onclick="openLang('it')" aria-label="İtalyanca çalış">
-      <div class="sky"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
-        <g fill="rgba(0,0,0,.30)">
-          <!-- Colosseum -->
-          <path d="M40 150v-45c0-8 30-16 60-16s60 8 60 16v45zM55 150v-30h14v30zM80 150v-30h14v30zM105 150v-30h14v30zM130 150v-30h14v30z"/>
-          <path d="M48 96h104" stroke="rgba(255,255,255,.25)" stroke-width="3"/>
-          <!-- Pisa tower (leaning) -->
-          <g transform="rotate(-8 320 150)">
-            <rect x="306" y="60" width="28" height="90"/>
-            <rect x="303" y="60" width="34" height="8"/><rect x="303" y="80" width="34" height="4" fill="rgba(255,255,255,.25)"/>
-            <rect x="303" y="98" width="34" height="4" fill="rgba(255,255,255,.25)"/><rect x="303" y="116" width="34" height="4" fill="rgba(255,255,255,.25)"/>
-            <rect x="310" y="48" width="20" height="12"/>
-          </g>
-          <!-- pizza slice -->
-          <path d="M210 150l25-52c4 2 10 6 12 12l-20 40z"/>
-          <circle cx="230" cy="122" r="3.4" fill="rgba(255,255,255,.35)"/><circle cx="236" cy="134" r="3.4" fill="rgba(255,255,255,.35)"/>
-        </g>
-      </svg></div>
+      <div class="sky"><svg viewBox="0 0 400 520" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><!-- ===== LEANING TOWER OF PISA — tall hero ===== -->
+<g transform="translate(150 40) scale(2.8)">
+ <g transform="rotate(5 20 156)">
+  <g fill="#053d1f" fill-opacity=".5" stroke="#053d1f" stroke-opacity=".5" stroke-width=".8">
+    <rect x="8" y="18" width="30" height="138" rx="2"/>
+    <rect x="6" y="6" width="34" height="14" rx="2"/>
+    <rect x="12" y="0" width="22" height="8" rx="2"/>
+  </g>
+  <g stroke="#8fe0b0" stroke-width=".7" stroke-opacity=".45" fill="none">
+    <path d="M8 40 H38 M8 62 H38 M8 84 H38 M8 106 H38 M8 128 H38"/>
+    <path d="M14 40 V62 M20 40 V62 M26 40 V62 M32 40 V62"/>
+    <path d="M14 62 V84 M20 62 V84 M26 62 V84 M32 62 V84"/>
+    <path d="M14 84 V106 M20 84 V106 M26 84 V106 M32 84 V106"/>
+    <path d="M14 106 V128 M20 106 V128 M26 106 V128 M32 106 V128"/>
+  </g>
+  <path d="M14 156 L14 140 Q14 134 20 134 Q26 134 26 140 L26 156 Z" fill="#0a7a3d"/>
+ </g>
+</g>
+<!-- ===== COLOSSEUM — bottom-left base ===== -->
+<g transform="translate(-10 349) scale(1.15)">
+  <g fill="#053d1f" fill-opacity=".5" stroke="#053d1f" stroke-opacity=".5" stroke-width="1">
+    <path d="M4 136 L4 46 Q4 20 40 12 Q90 4 150 12 Q180 16 182 40 L182 60 Q170 54 158 58 L158 92 Q150 88 142 92 L142 136 Z"/>
+  </g>
+  <g fill="#0a7a3d">
+    <path d="M14 136 L14 108 Q14 100 22 100 Q30 100 30 108 L30 136 Z"/><path d="M40 136 L40 106 Q40 98 48 98 Q56 98 56 106 L56 136 Z"/><path d="M66 136 L66 105 Q66 97 74 97 Q82 97 82 105 L82 136 Z"/><path d="M92 136 L92 105 Q92 97 100 97 Q108 97 108 105 L108 136 Z"/><path d="M118 136 L118 106 Q118 98 126 98 Q134 98 134 106 L134 136 Z"/>
+    <path d="M16 84 Q16 74 24 74 Q32 74 32 84 L32 90 L16 90 Z"/><path d="M42 82 Q42 72 50 72 Q58 72 58 82 L58 88 L42 88 Z"/><path d="M68 80 Q68 70 76 70 Q84 70 84 80 L84 86 L68 86 Z"/><path d="M94 80 Q94 70 102 70 Q110 70 110 80 L110 86 L94 86 Z"/><path d="M120 82 Q120 72 128 72 Q136 72 136 82 L136 88 L120 88 Z"/>
+    <rect x="18" y="50" width="10" height="14"/><rect x="44" y="48" width="10" height="14"/><rect x="70" y="46" width="10" height="14"/><rect x="96" y="46" width="10" height="14"/><rect x="122" y="48" width="10" height="14"/>
+  </g>
+  <g stroke="#8fe0b0" stroke-width="1" stroke-opacity=".4" fill="none"><path d="M6 94 H140"/><path d="M8 66 H150"/></g>
+</g>
+<!-- ===== GONDOLA — foreground ===== -->
+<g transform="translate(158 452) scale(1.4)">
+  <path d="M0 26 Q40 40 130 30 Q150 28 150 22 Q120 30 40 22 Q10 18 0 26 Z" fill="#053d1f" fill-opacity=".58"/>
+  <path d="M150 22 Q160 20 160 8 Q160 2 154 2 Q158 8 152 12 Q150 16 150 22 Z" fill="#053d1f" fill-opacity=".62"/>
+  <path d="M154 4 h8 M154 9 h8 M154 14 h6" stroke="#8fe0b0" stroke-width=".8" stroke-opacity=".4"/>
+  <g fill="#053d1f" fill-opacity=".62"><circle cx="34" cy="-14" r="4"/><path d="M31 -10 q3 8 0 20 q-3 2 -6 0 q2 -12 2 -20 Z"/></g>
+  <path d="M40 -6 L64 26" stroke="#053d1f" stroke-width="1.6" stroke-opacity=".58"/>
+  <g stroke="#8fe0b0" stroke-width=".9" stroke-opacity=".3" fill="none"><path d="M-6 40 h60 M70 44 h50 M20 48 h40"/></g>
+</g></svg></div>
       <div class="meta">
-        <span class="flag"><i style="background:#008C45"></i><i style="background:#fff"></i><i style="background:#CD212A"></i></span>
+        <svg class="flagsvg" viewBox="0 0 34 24" aria-hidden="true"><rect width="34" height="24" rx="2" fill="#fff"/><rect width="11.5" height="24" rx="2" fill="#008c45"/><rect x="22.5" width="11.5" height="24" fill="#cd212a"/><rect x="21" width="2" height="24" fill="#cd212a"/><rect width="34" height="24" rx="2" fill="none" stroke="#00000022" stroke-width=".5"/></svg>
         <h2>İtalyanca</h2>
-        <div class="sub">Kolezyum'dan Pisa'ya — pizza dilimi kadar keyifli kelimeler</div>
+        <div class="sub">Kolezyum'dan Pisa'ya, Venedik gondollarına kelimeler</div>
         <span class="count" id="count-it">— kelime</span>
       </div>
     </button>
@@ -378,11 +455,11 @@ input,select,textarea{font-family:inherit;font-size:1rem}
 <script>
 /* ================= DATA ================= */
 const LANGS={
-  es:{name:"İspanyolca",voice:"es-ES",flag:["#C8102E","#F1BF00","#C8102E"],
+  es:{name:"İspanyolca",voice:"es-ES",flagSvg:"<svg viewBox=\"0 0 34 24\" style=\"height:16px;width:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.4)\"><rect width=\"34\" height=\"24\" rx=\"2\" fill=\"#f4c94b\"/><rect width=\"34\" height=\"6\" fill=\"#c8102e\"/><rect y=\"18\" width=\"34\" height=\"6\" fill=\"#c8102e\"/><g transform=\"translate(12 12)\"><rect x=\"-8\" y=\"-4\" width=\"2\" height=\"9\" fill=\"#c8102e\"/><rect x=\"6\" y=\"-4\" width=\"2\" height=\"9\" fill=\"#c8102e\"/><path d=\"M-5 -5 h10 v6 q0 4 -5 6 q-5 -2 -5 -6 Z\" fill=\"#fff\"/><path d=\"M-5 -5 h5 v5 h-5 Z\" fill=\"#c8102e\"/><rect x=\"-5\" y=\"0\" width=\"5\" height=\"3\" fill=\"#f4c94b\"/><path d=\"M-4 -6 h8 l-1 -3 -1.5 2 -1.5 -3 -1.5 3 -1.5 -2 Z\" fill=\"#f1bf00\"/></g></svg>",
       skyline:`<svg viewBox="0 0 1000 160" aria-hidden="true"><rect width="1000" height="160" fill="none"/><g fill="var(--acc)" opacity=".18"><path d="M80 160V80l8-18 8 18v80zM108 160V60l9-22 9 22v100zM138 160V80l8-18 8 18v80z"/><path d="M700 160v-30c0-12 10-24 26-24h36c12 0 19 7 26 7 8 0 12-6 19-6 5 0 7 4 5 8-4 6-11 8-11 14v31h-14v-22h-36v22h-14v-18c-10 2-23 1-23 9v9z"/><circle cx="123" cy="32" r="4"/><path d="M400 160c-16 0-28-13-28-27 0-10 6-16 6-24s-5-10-5-17c0-11 11-20 27-20s27 9 27 20c0 7-5 9-5 17s6 14 6 24c0 14-12 27-28 27z"/><rect x="396" y="36" width="8" height="40"/></g><text x="50%" y="40" text-anchor="middle" font-family="Fraunces,serif" font-size="26" font-weight="800" fill="var(--acc)">¡Vamos! Kelimelerle İspanya turu</text></svg>`},
-  fr:{name:"Fransızca",voice:"fr-FR",flag:["#002395","#ffffff","#ED2939"],
+  fr:{name:"Fransızca",voice:"fr-FR",flagSvg:"<svg viewBox=\"0 0 34 24\" style=\"height:16px;width:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.4)\"><rect width=\"34\" height=\"24\" rx=\"2\" fill=\"#fff\"/><rect width=\"11.5\" height=\"24\" rx=\"2\" fill=\"#002395\"/><rect x=\"22.5\" width=\"11.5\" height=\"24\" fill=\"#ed2939\"/><rect x=\"21\" width=\"2\" height=\"24\" fill=\"#ed2939\"/></svg>",
       skyline:`<svg viewBox="0 0 1000 160" aria-hidden="true"><g fill="var(--acc)" opacity=".18"><path d="M480 160l30-64h8l-20-46h5l-14-36h-5l-14 36h5l-20 46h8l30 64zM469 96h54M459 122h74" stroke="var(--acc)" stroke-width="6"/><path d="M120 138c-17-5-29-19-27-33 17 2 27 9 32 19 2-12 10-19 22-22 12 3 20 10 22 22 5-10 15-17 32-19 2 14-10 28-27 33-15 5-39 5-54 0z"/><path d="M770 148c31-26 67-40 96-43 5 10 0 17-10 22-26 10-58 19-77 31-7 2-12-5-9-10z"/></g><text x="50%" y="40" text-anchor="middle" font-family="Fraunces,serif" font-size="26" font-weight="800" fill="var(--acc)">Allons-y ! Kelimelerle Paris sokakları</text></svg>`},
-  it:{name:"İtalyanca",voice:"it-IT",flag:["#008C45","#ffffff","#CD212A"],
+  it:{name:"İtalyanca",voice:"it-IT",flagSvg:"<svg viewBox=\"0 0 34 24\" style=\"height:16px;width:auto;border-radius:2px;box-shadow:0 1px 3px rgba(0,0,0,.4)\"><rect width=\"34\" height=\"24\" rx=\"2\" fill=\"#fff\"/><rect width=\"11.5\" height=\"24\" rx=\"2\" fill=\"#008c45\"/><rect x=\"22.5\" width=\"11.5\" height=\"24\" fill=\"#cd212a\"/><rect x=\"21\" width=\"2\" height=\"24\" fill=\"#cd212a\"/></svg>",
       skyline:`<svg viewBox="0 0 1000 160" aria-hidden="true"><g fill="var(--acc)" opacity=".18"><path d="M100 160v-52c0-10 36-19 72-19s72 9 72 19v52zM118 160v-36h17v36zM148 160v-36h17v36zM178 160v-36h17v36zM208 160v-36h17v36z"/><g transform="rotate(-8 860 160)"><rect x="840" y="55" width="34" height="105"/><rect x="836" y="55" width="42" height="9"/><rect x="836" y="80" width="42" height="5" fill="var(--paper)"/><rect x="836" y="102" width="42" height="5" fill="var(--paper)"/><rect x="836" y="124" width="42" height="5" fill="var(--paper)"/><rect x="845" y="41" width="24" height="14"/></g><path d="M500 160l30-64c5 2 12 7 15 15l-25 49z"/></g><text x="50%" y="40" text-anchor="middle" font-family="Fraunces,serif" font-size="26" font-weight="800" fill="var(--acc)">Andiamo! Kelimelerle İtalya keyfi</text></svg>`}
 };
 
@@ -590,8 +667,9 @@ function speakLang(l,text,ev){ const keep=LANG; LANG=l; speak(text,ev); LANG=kee
 /* ================= STORAGE ================= */
 /* Supabase ile kalıcı kayıt için iki sabiti doldur (SETUP.md'ye bak).
    Boş bırakılırsa tarayıcı içi depolama kullanılır. */
-const SUPABASE_URL='';   // örn: https://abcdefgh.supabase.co
-const SUPABASE_KEY='';   // "anon public" anahtarı
+const SUPABASE_URL='https://cwwhlvuryiztcfakzmlc.supabase.co';
+const SUPABASE_KEY='sb_publishable_PYSCZeRHtZUn7rbFpddLYw_oSXLkCOp';
+
 const SB=SUPABASE_URL&&SUPABASE_KEY;
 const sbHeaders={'apikey':SUPABASE_KEY,'Authorization':'Bearer '+SUPABASE_KEY,'Content-Type':'application/json'};
 const mem={};
@@ -699,7 +777,7 @@ async function openLang(l){
   document.getElementById('home').classList.add('hidden');
   app.classList.remove('hidden');
   document.getElementById('lang-title').textContent=LANGS[l].name;
-  document.getElementById('lang-stripe').innerHTML=LANGS[l].flag.map(c=>`<i style="background:${c}"></i>`).join('');
+  document.getElementById('lang-stripe').innerHTML=LANGS[l].flagSvg;
   document.getElementById('dash-skyline').innerHTML=LANGS[l].skyline;
   showTab('dash');
 }
